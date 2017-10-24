@@ -97,6 +97,7 @@ git branch -m old_branch_name new_branch_name  //修改本地分支名
 ### 删除分支
 ``` shell
 git branch -d branch_name  //删除本地分支branch_name
+git branch -D branch_name  //如果本地分支branch_name没有被合并，那么就必须用-D强行删除
 git push --delete origin branch_name  //删除远程分支branch_name
 ```
 
@@ -134,6 +135,17 @@ git clone git@github.com:my_github_accout/mygit_repository_name.git  (SSH方式)
 git clone https://github.com/my_github_accout/mygit_repository_name.git  (HTTPS方式)
 ```
 
+### 查询远程库信息
+``` shell
+git remote
+git remote -v //显示远程库详情，包含了可以抓取及推送的仓库
+```
+
+### 推送分支
+``` shell
+git push origin branch_name   //推送分支到远程库中的branch_name分支中
+```
+tmp
 ### 其他说明
 - Git版本控制不能跟踪二进制文件的行级修改记录，二进制文件只能记录大小变化
 - Git中，HEAD表示当前版本,HEAD^表示上一个版本，HEAD^^表示上上一个版本，HEAD~#（HEAD~2表示上2个版本）表示上#个版本
