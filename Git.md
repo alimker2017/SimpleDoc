@@ -84,7 +84,8 @@ git checkout -b branch_name  //在当前分支上创建分支branch_name,并切�
 git push origin branch_name  //将新创建的branch_name分支提交到远程仓库中
 ```
 ### 切换分支
-- **注意，如果切换分区之前，当前分区有修改文件内容，但是没有commit，修改内容会被带到新分区中**
+- **注意，如果切换分支之前，当前分支有修改文件内容，但是没有commit，修改内容会被带到新分支中**
+- **如果在切换前的分支(m1)中做了修改，并没有提交，但是在切换后的分支(m2)中把修改提交了，切换前的分支(m1)中的修改会被撤除，导致在之前的分支(m1)中的修改都没了**
 ``` shell
 git checkout branch_name  //从当前分区企鹅蛋到branch_name
 ```
@@ -107,6 +108,15 @@ git push --delete origin branch_name  //删除远程分支branch_name
 ### 合并分支
 ``` shell
 git merge branch_name  //将branch_name合并到当前分支上
+```
+
+### bug分支
+``` shell
+git stash  //将当前分区做的修改(可能由于没有修改成功，不能提交的修改)临时存储起来，防止切换分区的时候将修改带到新的分区中
+git stash list  //查看临时存储区存储的工作现场
+git stash apply  //从临时存储区恢复最近的工作现场，但不删除临时存储区数据
+git stash drop  //删除临时存储区存储的工作现场内容
+git stash apply stash@{1}  //从临时存储区恢复list为1的现场
 ```
 
 ### 关联Github中的仓库到已经创建的本地仓库（适用于先有项目，然后再加入到Git管理中）
