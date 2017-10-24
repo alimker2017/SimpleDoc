@@ -1,7 +1,7 @@
 # Git文档
 ## Git常规操作
 ### 申明自己的名称及邮箱
-- 申明用于表示本分布式节点的名称信息等，global表示所有git仓库都使用这个配置
+- 申明用于表示本分布式节点的名称信息等，global表示所有git仓库都使用这个配置，否则只对当前仓库生效
 ``` shell
 git config --global user.name = alimker  
 git config --global user.email my_email@myemail.com
@@ -135,6 +135,11 @@ git clone git@github.com:my_github_accout/mygit_repository_name.git  (SSH方式)
 git clone https://github.com/my_github_accout/mygit_repository_name.git  (HTTPS方式)
 ```
 
+### 删除关联的远程库
+``` shell
+git remote rm origin
+```
+
 ### 查询远程库信息
 ``` shell
 git remote
@@ -160,7 +165,52 @@ git branch --set-upstream branch_name origin/branch_name
 git checkout -b branch_name origin/branch_name
 ```
 
+### 创建标签
+``` shell
+git tag v1.0  //给当前分支上的commit id创建一个v1.0的标签
+git tag v1.1 6655443  //给指定commit id创建一个v1.1的标签
+git tag -a v1.2 -m "标签说明文字" 6655443  //打标签的时候写上说明
+```
+
+### 查看所有标签
+``` shell
+git tag
+```
+
+### 查看指定标签的详情
+``` shell
+git show v1.1   //查看标签名=v1.1的标签的详情
+```
+### 删除标签
+``` shell
+git tag -d v1.1
+```
+
+### 推送标签到远程库
+``` shell
+git push origin tag_name  //推送指定标签到远程库
+git push origin --tags  //推送全部未推送的标签到远程库
+```
+
+### 删除远程库中的标签
+- 先删除本地标签库，再删除远程库中的标签
+``` shell
+git tag -d v1.1  //1:先删除本地的标签
+git push origin :refs/tags/v1.1  //2:删除远程库中的标签
+```
+
+### 给命令设置别名
+``` shell
+git config --global alias.st status  //设置st表示status  git status = git st
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+  //git log命令的超清晰参数，使用 git lg
+```
+
 ### 其他说明
 - Git版本控制不能跟踪二进制文件的行级修改记录，二进制文件只能记录大小变化
 - Git中，HEAD表示当前版本,HEAD^表示上一个版本，HEAD^^表示上上一个版本，HEAD~#（HEAD~2表示上2个版本）表示上#个版本
 - 跳转到之前的版本后，不能直接提交修改成最新
+- 忽略特殊文件，使用 .gitignore文件描述要忽略的文件github提供了一些常用的忽略文件：https://github.com/github/gitignore
+- 每个仓库的配置文件存放在仓库目录下的:.git/config文件中
+- 全局配置是放在当前用户家目录下的.gitconfig文件中
+- 搭建git，看廖雪峰blog
