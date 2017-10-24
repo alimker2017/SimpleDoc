@@ -116,7 +116,11 @@ git push origin master  //第一次推送后，以后就可以不用-u参数了
 ### 从远程看克隆仓库到本地（适用于项目刚开始就直接上Git）
 ``` shell
 git clone git@github.com:my_github_accout/mygit_repository_name.git  (SSH方式)
+<<<<<<< HEAD
 git clone https://github.com/my_github_accout/mygit_repository_name.git  (HTTPS的方式)master
+=======
+git clone https://github.com/my_github_accout/mygit_repository_name.git  (HTTPS的方式)Alimker
+>>>>>>> devops
 ```
 tmp;
 ### 其他说明
