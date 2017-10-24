@@ -83,7 +83,11 @@ git checkout branch_name  //切换到branch_name上
 git checkout -b branch_name  //在当前分支上创建分支branch_name,并切换到branch_name上
 git push origin branch_name  //将新创建的branch_name分支提交到远程仓库中
 ```
-
+### 切换分支
+- **注意，如果切换分区之前，当前分区有修改文件内容，但是没有commit，修改内容会被带到新分区中**
+``` shell
+git checkout branch_name  //从当前分区企鹅蛋到branch_name
+```
 ### 修改本地分支名
 ``` shell
 git branch -m old_branch_name new_branch_name  //修改本地分支名
@@ -119,7 +123,7 @@ git push origin master  //第一次推送后，以后就可以不用-u参数了
 git clone git@github.com:my_github_accout/mygit_repository_name.git  (SSH方式)
 git clone https://github.com/my_github_accout/mygit_repository_name.git  (HTTPS方式)
 ```
-
+m1 changes
 ### 其他说明
 - Git版本控制不能跟踪二进制文件的行级修改记录，二进制文件只能记录大小变化
 - Git中，HEAD表示当前版本,HEAD^表示上一个版本，HEAD^^表示上上一个版本，HEAD~#（HEAD~2表示上2个版本）表示上#个版本
