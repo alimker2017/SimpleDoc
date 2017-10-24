@@ -38,10 +38,11 @@ git status
 git diff forget_changed_file.c
 ```
 
-### 查看历史修改记录
-- 查看当前仓库修改历史，查看到的SHA1值可以用来进行跳到指定的版本，查询到的HEAD，表示当前版本
+### 查看分支历史修改记录
+- 查看当前仓库分支修改历史，查看到的SHA1值可以用来进行跳到指定的版本，查询到的HEAD，表示当前版本
 ``` shell
-git log
+git log  //查看分支修改记录
+git log --graph    //查看分支修改记录及合并图
 ```
 
 ### 跳转到指定版本
@@ -116,11 +117,7 @@ git push origin master  //第一次推送后，以后就可以不用-u参数了
 ### 从远程看克隆仓库到本地（适用于项目刚开始就直接上Git）
 ``` shell
 git clone git@github.com:my_github_accout/mygit_repository_name.git  (SSH方式)
-<<<<<<< HEAD
-git clone https://github.com/my_github_accout/mygit_repository_name.git  (HTTPS的方式)master
-=======
-git clone https://github.com/my_github_accout/mygit_repository_name.git  (HTTPS的方式)Alimker
->>>>>>> devops
+git clone https://github.com/my_github_accout/mygit_repository_name.git  (HTTPS方式)
 ```
 tmp;
 ### 其他说明
