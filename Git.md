@@ -37,9 +37,10 @@ git status
 ``` shell
 git diff forget_changed_file.c
 ```
+
 ### 查看历史修改记录
 ``` shell
 ```
-
+haha
 ### 其他说明
 - Git版本控制不能跟踪二进制文件的行级修改记录，二进制文件只能记录大小变化
