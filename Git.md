@@ -15,12 +15,12 @@ cd my_repository_name
 git init
 ```
 
-### 将文件纳入管理体系
+### 将文件加入到暂存区(stage)
 ``` shell
 git add new_files.c
 ```
 
-### 将纳入管理体系的文件提交到**本地仓库**
+### 将暂存区中的文件提交到**本地仓库**
 - 无论是提交新建的文件，还是已修改的文件，都需要**先调用add**
 ``` shell
 git commit -m "some log for commit files"
@@ -39,9 +39,21 @@ git diff forget_changed_file.c
 ```
 
 ### 查看历史修改记录
+- 查看当前仓库修改历史，查看到的SHA1值可以用来进行跳到指定的版本，查询到的HEAD，表示当前版本
 ``` shell
+git log
 ```
-haha
+
+### 跳转到指定版本
+``` shell
+git reset --hard [HEAD~NUM|SHA1]  //example: git reset --hard HEAD~10 跳到当前HEAD之前第10个版本
+```
+
+### 查看历史命令
+``` shell
+git reflog
+```
+
 ### 其他说明
 - Git版本控制不能跟踪二进制文件的行级修改记录，二进制文件只能记录大小变化
 - Git中，HEAD表示当前版本,HEAD^表示上一个版本，HEAD^^表示上上一个版本，HEAD~#（HEAD~2表示上2个版本）表示上#个版本
