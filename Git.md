@@ -69,6 +69,35 @@ git reset HEAD filename
 git rm filename
 ```
 
+### 查看分区信息
+``` shell
+git branch  //查看本地有哪些分支
+git branch  //查看本地及远程仓库有哪些分支
+```
+
+### 创建分支
+``` shell
+git branch branch_name  //在当前分支上创建branch_name
+git checkout branch_name  //切换到branch_name上
+git checkout -b branch_name  //在当前分支上创建分支branch_name,并切换到branch_name上
+```
+
+### 修改本地分支名
+``` shell
+git branch -m old_branch_name new_branch_name  //修改本地分支名
+```
+
+### 修改远程仓库分支名
+1：创建本地分支名，后者修改本地分支名
+2：推送新的分支到仓库 git push origin branch_name
+3：删除远程分支 git push --delete origin branch_name
+
+### 删除分支
+``` shell
+git branch -d branch_name  //删除本地分支branch_name
+git push --delete origin branch_name  //删除远程分支branch_name
+```
+
 ### 关联Github中的仓库到已经创建的本地仓库（适用于先有项目，然后再加入到Git管理中）
 ``` shell
 git remote add origin git@github.com:my_github_account/mygit_repository_name.git  (SSH方式)
@@ -83,11 +112,7 @@ git push origin master  //第一次推送后，以后就可以不用-u参数了
 git clone git@github.com:my_github_accout/mygit_repository_name.git  (SSH方式)
 git clone https://github.com/my_github_accout/mygit_repository_name.git  (HTTPS方式)
 ```
-<<<<<<< HEAD
-master for changes
-=======
 dev for changes;x
->>>>>>> dev
 ### 其他说明
 - Git版本控制不能跟踪二进制文件的行级修改记录，二进制文件只能记录大小变化
 - Git中，HEAD表示当前版本,HEAD^表示上一个版本，HEAD^^表示上上一个版本，HEAD~#（HEAD~2表示上2个版本）表示上#个版本
