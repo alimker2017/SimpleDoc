@@ -69,11 +69,19 @@ git reset HEAD filename
 git rm filename
 ```
 
-### 关联Github中的仓库到已经创建的本地仓库（本地仓库可以已经有代码了）
+### 关联Github中的仓库到已经创建的本地仓库（适用于先有项目，然后再加入到Git管理中）
 ``` shell
 git remote add origin git@github.com:my_github_account/mygit_repository_name.git  (SSH方式)
 git remote add origin https://github.com/my_github_account/mygit_repository_name.git  (HTTPS方式)
 // origin 是git默认的远程库叫法，可以修改成其他名称
+git push -u origin master  //关联后第一次推送消息应该使用 -u参数 ，目的是关联分支
+git push origin master  //第一次推送后，以后就可以不用-u参数了
+```
+
+### 从远程看克隆仓库到本地（适用于项目刚开始就直接上Git）
+``` shell
+git clone git@github.com:my_github_accout/mygit_repository_name.git  (SSH方式)
+git clone https://github.com/my_github_accout/mygit_repository_name.git  (HTTPS方式)
 ```
 
 ### 其他说明
