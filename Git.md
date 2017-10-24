@@ -54,7 +54,7 @@ git reset --hard [HEAD~NUM|SHA1]  //example: git reset --hard HEAD~10 跳到当�
 git reflog
 ```
 
-### 撤销已修改，但为及提交到暂存区的修改
+### 撤销已修改，但为及提交到暂存区的修改，包括错误删除后要恢复
 ``` shell
 git checkout -- filename    // -- 不能省略，否则就是切换到其他分支了
 ```
@@ -62,6 +62,18 @@ git checkout -- filename    // -- 不能省略，否则就是切换到其他分�
 ### 撤销已经提交到暂存区的修改
 ``` shell
 git reset HEAD filename
+```
+
+### 删除文件
+``` shell
+git rm filename
+```
+
+### 关联Github中的仓库到已经创建的本地仓库（本地仓库可以已经有代码了）
+``` shell
+git remote add origin git@github.com:my_github_account/mygit_repository_name.git  (SSH方式)
+git remote add origin https://github.com/my_github_account/mygit_repository_name.git  (HTTPS方式)
+// origin 是git默认的远程库叫法，可以修改成其他名称
 ```
 
 ### 其他说明
