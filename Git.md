@@ -20,7 +20,7 @@ git init
 git add new_files.c
 ```
 
-### 将暂存区中的文件提交到**本地仓库**
+### 将暂存区中的文件提交到**本地仓库**的当前选择分支
 - 无论是提交新建的文件，还是已修改的文件，都需要**先调用add**
 ``` shell
 git commit -m "some log for commit files"
@@ -52,6 +52,16 @@ git reset --hard [HEAD~NUM|SHA1]  //example: git reset --hard HEAD~10 跳到当�
 ### 查看历史命令
 ``` shell
 git reflog
+```
+
+### 撤销已修改，但为及提交到暂存区的修改
+``` shell
+git checkout -- filename    // -- 不能省略，否则就是切换到其他分支了
+```
+
+### 撤销已经提交到暂存区的修改
+``` shell
+git reset HEAD filename
 ```
 
 ### 其他说明
