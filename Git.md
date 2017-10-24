@@ -145,7 +145,21 @@ git remote -v //显示远程库详情，包含了可以抓取及推送的仓库
 ``` shell
 git push origin branch_name   //推送分支到远程库中的branch_name分支中
 ```
-tmp
+
+### 抓取当前分支最新数据
+``` shell
+git pull
+```
+
+### 设定本地分支与远程分支的关联，关联后可以调用pull抓取
+``` shell
+git branch --set-upstream branch_name origin/branch_name
+```
+### 下载远程库中的分支
+``` shell
+git checkout -b branch_name origin/branch_name
+```
+
 ### 其他说明
 - Git版本控制不能跟踪二进制文件的行级修改记录，二进制文件只能记录大小变化
 - Git中，HEAD表示当前版本,HEAD^表示上一个版本，HEAD^^表示上上一个版本，HEAD~#（HEAD~2表示上2个版本）表示上#个版本
