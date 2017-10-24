@@ -118,7 +118,7 @@ git push origin master  //第一次推送后，以后就可以不用-u参数了
 git clone git@github.com:my_github_accout/mygit_repository_name.git  (SSH方式)
 git clone https://github.com/my_github_accout/mygit_repository_name.git  (HTTPS方式)
 ```
-
+tmp;
 ### 其他说明
 - Git版本控制不能跟踪二进制文件的行级修改记录，二进制文件只能记录大小变化
 - Git中，HEAD表示当前版本,HEAD^表示上一个版本，HEAD^^表示上上一个版本，HEAD~#（HEAD~2表示上2个版本）表示上#个版本
