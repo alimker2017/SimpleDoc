@@ -72,7 +72,7 @@ git rm filename
 ### 查看分区信息
 ``` shell
 git branch  //查看本地有哪些分支
-git branch  //查看本地及远程仓库有哪些分支
+git branch -a  //查看本地及远程仓库有哪些分支
 ```
 
 ### 创建分支
@@ -99,7 +99,10 @@ git push --delete origin branch_name  //删除远程分支branch_name
 2：推送新的分支到仓库 git push origin branch_name
 3：删除远程分支 git push --delete origin branch_name
 
-
+### 合并分支
+``` shell
+git merge branch_name  //将branch_name合并到当前分支上
+```
 
 ### 关联Github中的仓库到已经创建的本地仓库（适用于先有项目，然后再加入到Git管理中）
 ``` shell
