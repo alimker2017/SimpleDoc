@@ -48,6 +48,7 @@ git log --graph    //查看分支修改记录及合并图
 ### 跳转到指定版本
 ``` shell
 git reset --hard [HEAD~NUM|SHA1]  //example: git reset --hard HEAD~10 跳到当前HEAD之前第10个版本
+git reset --hard origin/branch_name  //跳转当前分支到远程最新版本
 ```
 
 ### 查看历史命令
@@ -55,7 +56,7 @@ git reset --hard [HEAD~NUM|SHA1]  //example: git reset --hard HEAD~10 跳到当�
 git reflog
 ```
 
-### 撤销已修改，但为及提交到暂存区的修改，包括错误删除后要恢复
+### 撤销已修改但还没有提交到暂存区的修改，或者恢复错误删除掉的文件
 ``` shell
 git checkout -- filename    // -- 不能省略，否则就是切换到其他分支了
 ```
