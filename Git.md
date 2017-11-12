@@ -88,7 +88,7 @@ git push origin branch_name  //将新创建的branch_name分支提交到远程�
 - **注意，如果切换分支之前，当前分支有修改文件内容，但是没有commit，修改内容会被带到新分支中**
 - **如果在切换前的分支(m1)中做了修改，并没有提交，但是在切换后的分支(m2)中把修改提交了，切换前的分支(m1)中的修改会被撤除，导致在之前的分支(m1)中的修改都没了**
 ``` shell
-git checkout branch_name  //从当前分区企鹅蛋到branch_name
+git checkout branch_name  //从当前分区切换到branch_name
 ```
 ### 修改本地分支名
 ``` shell
