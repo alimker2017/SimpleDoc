@@ -1,4 +1,6 @@
 # HTML
-## HTML标签分类
-- 双标签
-- 单标签
+## head
+### meta标签
+``` http
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+```
