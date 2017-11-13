@@ -1,5 +1,7 @@
 # HTML
-## <!DOCTYPE HTML>
+```
+<!DOCTYPE HTML>
+```
 > 表示使用HTML5
 
 ## head
