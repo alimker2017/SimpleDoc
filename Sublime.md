@@ -9,3 +9,6 @@ import  urllib.request,os;pf='Package Control.sublime-package';ipp=sublime.insta
 ## 安装Git
 - 安装Git软件，默认下一步即可
 - 安装Package插件: Git
+
+## 安装SFTP
+- 安装Package插件：sftp
